@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+    ydl:
+        image: victim/yt-dlp-server:latest
+        container_name: ytdlpweb
+        ports:
+            - 8080:8080
+        
+        volumes:
+            # Where downloaded videos should go 
+            #change for your uses
+            - /*location*/ytdlpserv/vid:/app/downloads
+            # Where the database is 
+            #change for your uses
+            - /*location*/ytdlpserv/db:/app/db
+        environment:
+            - APPNAME=YDS
+            - ADMINUSER=admin
+            - PASSWORD=sanitized password  #Change for your use, please do not use defaults
+            - TZ=America/Denver #change for your own local
+        restart: unless-stopped
