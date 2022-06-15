@@ -1,0 +1,1 @@
+sudo docker run --name=lms --user 1000:1000 -d -p 5082:5082 -v /*location*:/music:ro -v /*location*/lms:/var/lms --restart unless-stopped epoupon/lms
