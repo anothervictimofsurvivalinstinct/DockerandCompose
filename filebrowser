@@ -1,0 +1,5 @@
+sudo docker run --name=filebrowser \
+-v /*location*/filebrowser/srv:/srv \
+-v /*location*/filebrowser/filebrowser.db:/database/filebrowser.db \
+-v /*location*/filebrowser/settings.json:/config/settings.json \
+-e PUID=1000 -e PGID=1000 -p 8081:80 filebrowser/filebrowser:s6
