@@ -1,0 +1,1 @@
+sudo docker run --name=heimdall -d -v /*location*/heimdall:/config -e PGID=1000 -e PUID=1000 -p 80:80 -p 443:443 linuxserver/heimdall
